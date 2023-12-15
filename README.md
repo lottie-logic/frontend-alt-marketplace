@@ -73,7 +73,7 @@ cd nextjs-starter-medusa/
 mv .env.template .env.local
 ```
 
-### Install dependencies
+### Install dependenciess
 
 Use Yarn to install all dependencies.
 
