@@ -17,10 +17,9 @@ Begin by reading [the docs](https://docs.medusajs.com/)
 - [Start up a backend with Railway](https://docs.medusajs.com/deployments/server/deploying-on-railway)
 - [Start up a frontend and connect it to your backend](https://docs.medusajs.com/starters/nextjs-medusa-starter) grab your `DB_URL` fill that in on the backend
 - test and see you can speak to your backend locally `curl localhost:9000/store/products`
-- Check the deployed DB on [Postman](https://web.postman.co/workspace/) `GET` `https://backend-production-......railway.app/store/products`
+- Check the deployed DB on [Postman](https://web.postman.co/workspace/) `GET` `https://backend-......railway.app/store/products`
 - [Deploy your frontend on Vercel](https://docs.medusajs.com/deployments/storefront/deploying-next-on-vercel)
-
-  - only works with `NEXT_PUBLIC_MEDUSA_BACKEND_URL` (`https://backend-.......up.railway.app`) `NEXT_PUBLIC_BASE_URL` `REVALIDATE_SECRET` don't add any others
+  - only works with `NEXT_PUBLIC_MEDUSA_BACKEND_URL` (`https://backend-.......up.railway.app`) `NEXT_PUBLIC_BASE_URL` `REVALIDATE_SECRET` `POSTGRES_URL` and set `MEDUSA_FF_MEDUSA_V2=true`
 
 ### Extending the Marketplace
 
