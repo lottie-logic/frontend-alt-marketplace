@@ -64,7 +64,7 @@ Features include:
 
 # Quickstart
 
-### Setting up the environment variables
+### Setting up the environment variabless
 
 Navigate into your projects directory and get your environment variables ready:
 
