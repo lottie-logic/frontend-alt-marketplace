@@ -1,3 +1,71 @@
+## Building a Marketplace
+
+Here's a great frustrating project to get on with!
+
+#### Frontend
+
+`Next.JS`
+
+#### Backend
+
+`Medusa.JS` `Node.JS` `PostgreSQL` `Redis`
+
+## Medusa.JS
+
+Begin by reading [the docs](https://docs.medusajs.com/)
+
+- [Start up a backend with Railway](https://docs.medusajs.com/deployments/server/deploying-on-railway)
+- [Start up a frontend and connect it to your backend](https://docs.medusajs.com/starters/nextjs-medusa-starter) grab your `DB_URL` fill that in on the backend
+- test and see you can speak to your backend locally `curl localhost:9000/store/products`
+- Check the deployed DB on [Postman](https://web.postman.co/workspace/) `GET` `https://backend-production-......railway.app/store/products`
+- [Deploy your frontend on Vercel](https://docs.medusajs.com/deployments/storefront/deploying-next-on-vercel)
+
+  - only works with `NEXT_PUBLIC_MEDUSA_BACKEND_URL` (`https://backend-.......up.railway.app`) `NEXT_PUBLIC_BASE_URL` `REVALIDATE_SECRET` don't add any others
+
+### Extending the Marketplace
+
+- add in search
+- test search
+
+### extended into a marketplace
+
+- Every time a user is created, a new store associated with that user is created.
+- When the user retrieves the store’s details, their store’s details will be retrieved.
+- Every time a product is created, it is associated with the store of the logged-in user.
+- The user will only be able to retrieve products from their store.
+
+### [extending-medusa-usecase-marketplace](https://medusajs.com/blog/extending-medusa-usecase-marketplace/)
+
+[tutorial repo](https://github.com/shahednasser/medusa-1.8-marketplace-tutorial?tab=readme-ov-file)
+
+[Make sure you are on version 1.8](https://docs.medusajs.com/upgrade-guides/medusa-core/1-8-0)
+
+- Every time a user is created, a new store associated with that user is created.
+- When the user retrieves the store’s details, their store’s details will be retrieved.
+- Every time a product is created, it is associated with the store of the logged-in user.
+- The user will only be able to retrieve products from their store.
+
+---
+
+- Users now have a `store_id` assigned on creation
+- `store_id` is a column for every product
+
+What’s Next
+In this tutorial, you learned how to implement the foundation of a marketplace: having multiple stores, different users within those stores, and associating products with a store.
+A marketplace has a variety of other features, each depending on your use case. Some of them are:
+Create order-store relation: This requires a similar implementation as what you’ve done in this tutorial with products and users. You need to extend the Copy to clipboard
+Order
+entity to include a relation to the store. You can learn more about extending entities in the documentation.
+List orders by stores: This requires a similar implementation as what you’ve done in this tutorial with products. You need to extend the Copy to clipboard
+OrderService
+to override the methods used to retrieve orders. You can learn more about extending services in the documentation.
+Associate an order to a store: This requires listening to the Copy to clipboard
+order.created
+event in a subscriber. The implementation can include creating child orders of an order if in your use case you support have products from multiple stores in one product. In this case, you’d also need to extend the order entity to create a parent-child relation. You can learn more about subscribers in the documentation.
+Implement teams within a store: You can implement a team within a store by extending the Copy to clipboard
+Invite
+entity to associate it with a store ID, then associate the user created from the invite with that store ID.
+
 <p align="center">
   <a href="https://www.medusajs.com">
   <picture>
